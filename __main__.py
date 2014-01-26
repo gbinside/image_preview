@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-# 
+#
 # (c) Roberto Gambuzzi
 # Creato:          03/01/2014 18:22:58
 # Ultima Modifica: 05/01/2014 13:06:28
-# 
+#
 # v 0.0.1.2
-# 
+#
 # file: C:\Dropbox\coding dojo\python_preview\__main__.py
 # auth: Roberto Gambuzzi <gambuzzi@gmail.com>
-# desc: 
-# 
+# desc:
+#
 # $Id: __main__.py 05/01/2014 13:06:28 Roberto $
 # --------------
 
@@ -85,7 +85,7 @@ class MyLabel(Label):
             self.from_top = h - self._size[1]
         if self.realsize:
             #self.keep_a_reference = ImageTk.PhotoImage(self.pil_current_image.crop((0,self.from_top,w,h)))
-            self.keep_a_reference = subimage(self.current_photo_image, 0, self.from_top, w, h)
+            self.keep_a_reference = subimage(self.current_photo_image, 0, self.from_top, w, self._size[1]+self.from_top)
             self.config(image=self.keep_a_reference)
         return "break"
 
