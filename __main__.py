@@ -77,6 +77,14 @@ class MyLabel(Label):
         self.from_top -= 100
         return self._scroll()
 
+    def scroll_down_more(self, e):
+        self.from_top += self._size[1]
+        return self._scroll()
+
+    def scroll_up_more(self, e):
+        self.from_top -= self._size[1]
+        return self._scroll()
+
     def _scroll(self):
         w, h = self.pil_current_image.size
         if self.from_top < 0:
@@ -255,6 +263,8 @@ if __name__ == "__main__":
     root.bind('<Left>', app.image.prev_image)
     root.bind('<Down>', app.image.scroll_down)
     root.bind('<Up>', app.image.scroll_up)
+    root.bind('<Next>', app.image.scroll_down_more)
+    root.bind('<Prior>', app.image.scroll_up_more)
     root.bind('1', app.image.notrealsize)
     root.bind('z', app.image.notzoom)
     root.bind('q', app.kill)
